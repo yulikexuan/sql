@@ -1,0 +1,23 @@
+table, row, column, cell, records, fields
+primary key, unique key, composite primary key
+indexes, index can include one or more columns
+foreign key,
+column: null value, default value, calculated column
+CHAR, VARCHAR2, NUMBER, FLOAT, DATE
+DML: Data Manipulation Language: SELECT, INSERT, UPDATE, DELETE 
+DDL: Data Definition Language: 
+    CREATE USER
+    CREATE TABLE
+    CREATE SEQUENCE
+    CREATE INDEX
+    DROP USER
+    DROP TABLE
+    DROP SEQUENCE
+    DROP INDEX
+    ALTER USER
+    ALTER TABLE
+    ALTER SEQUENCE
+    ALTER INDEX
+    GRANT
+    REVOKE
+ 
