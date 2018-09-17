@@ -5,7 +5,7 @@ import java.sql.*;
 public class DBUtil {
 
     public static Connection getConnection() {
-        
+
         // Load the database driver
         // NOTE: This block is necessary for Oracle 10g (JDBC 3.0),
         // but not for Oracle 11g (JDBC 4.0)
@@ -21,8 +21,7 @@ public class DBUtil {
             String dbUrl = "jdbc:oracle:thin:@localhost:1521:XE";
             String username = "ex";
             String password = "ex";
-            Connection connection = DriverManager.getConnection(
-                    dbUrl, username, password);
+            Connection connection = DriverManager.getConnection(dbUrl, username, password);
             return connection;
         } catch (SQLException e) {
             System.out.println(e);

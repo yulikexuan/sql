@@ -25,17 +25,11 @@ public class DBTestApp {
             String dbUrl = "jdbc:oracle:thin:@localhost:1521:XE";
             String username = "ap";
             String password = "ap";
-            connection = DriverManager.getConnection(
-                    dbUrl, username, password);
+            connection = DriverManager.getConnection(dbUrl, username, password);
 
             // Execute a SELECT statement
             statement = connection.createStatement();
-            String query
-                    = "SELECT vendor_name, invoice_number, invoice_total "
-                    + "FROM vendors INNER JOIN invoices "
-                    + "    ON vendors.vendor_id = invoices.vendor_id "
-                    + "WHERE invoice_total >= 500 "
-                    + "ORDER BY vendor_name, invoice_total DESC";
+            String query = "SELECT vendor_name, invoice_number, invoice_total " + "FROM vendors INNER JOIN invoices " + "    ON vendors.vendor_id = invoices.vendor_id " + "WHERE invoice_total >= 500 " + "ORDER BY vendor_name, invoice_total DESC";
             rs = statement.executeQuery(query);
 
             // Display the results of a SELECT statement
@@ -48,10 +42,7 @@ public class DBTestApp {
                 NumberFormat currency = NumberFormat.getCurrencyInstance();
                 String invoiceTotalString = currency.format(invoiceTotal);
 
-                System.out.println(
-                      "Vendor:     " + vendorName + "\n"
-                    + "Invoice No: " + invoiceNumber + "\n"
-                    + "Total:      " + invoiceTotalString + "\n");
+                System.out.println("Vendor:     " + vendorName + "\n" + "Invoice No: " + invoiceNumber + "\n" + "Total:      " + invoiceTotalString + "\n");
             }
         } catch (SQLException e) {
             System.out.println(e);

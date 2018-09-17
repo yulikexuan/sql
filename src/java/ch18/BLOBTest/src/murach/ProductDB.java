@@ -1,6 +1,7 @@
 package murach;
 
 // import all necessary Java JDBC and IO classes
+
 import java.sql.*;
 import java.io.*;
 
@@ -21,19 +22,13 @@ public class ProductDB {
             FileInputStream fileInputStream = new FileInputStream(inputFile);
 
             // initialize the BLOB in the database
-            String sql
-                    = "INSERT INTO product_images (product_id, product_image) "
-                    + "   VALUES(?, EMPTY_BLOB())";
+            String sql = "INSERT INTO product_images (product_id, product_image) " + "   VALUES(?, EMPTY_BLOB())";
             ps = connection.prepareStatement(sql);
             ps.setInt(1, product_id);
             ps.executeUpdate();
 
             // get a reference to the BLOB
-            sql
-                    = "SELECT product_image "
-                    + "FROM product_images "
-                    + "WHERE product_id = ? "
-                    + "FOR UPDATE";
+            sql = "SELECT product_image " + "FROM product_images " + "WHERE product_id = ? " + "FOR UPDATE";
             ps = connection.prepareStatement(sql);
             ps.setInt(1, product_id);
             rs = (OracleResultSet) ps.executeQuery();
@@ -84,10 +79,7 @@ public class ProductDB {
             FileOutputStream outputStream = new FileOutputStream(outputFile);
 
             // set up input steam from database
-            String sql
-                    = "SELECT product_image "
-                    + "FROM   product_images "
-                    + "WHERE  product_id = ?";
+            String sql = "SELECT product_image " + "FROM   product_images " + "WHERE  product_id = ?";
             ps = connection.prepareStatement(sql);
             ps.setInt(1, product_id);
             rs = (OracleResultSet) ps.executeQuery();
